@@ -45,6 +45,7 @@ The dataset used in this project is a simulated dataset with word frequencies fo
 - `Email No.`: Identifier for each email.
 - Word columns: Frequency of each word in the email.
 - `Prediction`: Binary label indicating if the email is spam (1) or not (0).
+- Data source :- https://www.kaggle.com/datasets/balaka18/email-spam-classification-dataset-csv
 
 ## Model Training and Evaluation
 
@@ -56,13 +57,4 @@ The dataset used in this project is a simulated dataset with word frequencies fo
 
 The `predict_email` function takes a new email text, preprocesses it, transforms it using the trained vectorizer, and predicts if it's spam or ham using the trained model.
 
-def predict_email(model, vectorizer, email_text):
-    # Preprocess the email text
-    processed_text = preprocess_text(email_text)
-    # Transform the text using the trained vectorizer
-    vectorized_text = vectorizer.transform([processed_text])
-    # Make a prediction using the trained model
-    prediction = model.predict(vectorized_text)
-    # Map the prediction to a label
-    return 'spam' if prediction[0] == 1 else 'ham'
-
+# Thank You!
